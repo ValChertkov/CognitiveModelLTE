@@ -17,7 +17,7 @@ class Colors:
 
 # ОПРЕДЕЛИТЬ УСТРОЙСТВО ВЫПОЛНЕНИЯ
 def SetDevice():
-    kan.torch.device("cpu")
+    
     if kan.torch.cuda.is_available():
         # print(Colors.GREEN + "[Инфо]" + Colors.ENDC, "рабочее устройство GPU")
         return kan.torch.device("cuda")
