@@ -1,0 +1,13 @@
+temp/
+*.asv
+*.zip
+Model_test
+Py/test_transforner/
+__pycache__/
+Py/__pycache__/
+Py/.idea
+*.xml
+*.pyc
+*.xml
+Py/Model_Simple_25_12_2023 LSTM 4 слоя \[160 80 40 20\] 30 эпох 0.1 дроп.h5
+Py/.idea/workspace.xml
