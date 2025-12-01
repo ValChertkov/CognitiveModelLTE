@@ -11,3 +11,10 @@ Py/.idea
 *.xml
 Py/Model_Simple_25_12_2023 LSTM 4 слоя \[160 80 40 20\] 30 эпох 0.1 дроп.h5
 Py/.idea/workspace.xml
+/ANN_models/kan/data
+/ANN_models/kan/results-kan
+/ANN_models/kan/model
+/ANN_models/model
+ANN_models/kan/test-model_cache_data
+ANN_models/kan/test-model_config.yml
+ANN_models/kan/test-model_state
