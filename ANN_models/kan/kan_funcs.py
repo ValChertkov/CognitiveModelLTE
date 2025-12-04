@@ -19,19 +19,19 @@ class Colors:
 # ОПРЕДЕЛИТЬ УСТРОЙСТВО ВЫПОЛНЕНИЯ
 def SetDevice():
     if kan.torch.cuda.is_available():
-        print(Colors.GREEN + "[Инфо]" + Colors.ENDC, "рабочее устройство GPU")
+        #print(Colors.GREEN + "[Инфо]" + Colors.ENDC, "рабочее устройство GPU")
         return kan.torch.device("cuda")
     else:
-        print(Colors.WARNING + "[Инфо]" + Colors.ENDC, "рабочее устройство CPU")
+        #print(Colors.WARNING + "[Инфо]" + Colors.ENDC, "рабочее устройство CPU")
         return kan.torch.device("cpu")
 
 
 # ЗАГРУЗИТЬ ДАННЫЕ
 def LoadData(adress, size, n, device):
-    X1 = loadmat(adress + 'clear__X_test.mat')['X_test'].astype('float32')
-    Y1 = loadmat(adress + 'clear__Y_test.mat')['Y_test'].astype('float32')
-    X2 = loadmat(adress + 'clear__X_train.mat')['X_train'].astype('float32')
-    Y2 = loadmat(adress + 'clear__Y_train.mat')['Y_train'].astype('float32')
+    X1 = loadmat(adress + 'X_test.mat')['X_test'].astype('float32')
+    Y1 = loadmat(adress + 'Y_test.mat')['Y_test'].astype('float32')
+    X2 = loadmat(adress + 'X_train.mat')['X_train'].astype('float32')
+    Y2 = loadmat(adress + 'Y_train.mat')['Y_train'].astype('float32')
     if n != 0:
         n = n - 1
         X2 = X2[n * size: (n + 1) * size, :]

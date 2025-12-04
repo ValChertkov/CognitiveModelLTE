@@ -50,8 +50,7 @@ global PercenDataSU;
 global out_predict;
 global out_flag_active_SU;
 
-
-
+prediction_bool = false;
 
 %% Иинициализация и расчет переменных (или загрузка из файла) 
 CreateConstants(folder_state, folder_week, true); % true - загрузка из файла, false - в функции параметры
@@ -94,7 +93,7 @@ for time = 0 : stepik : years * stepik * samples_in_day * days_in_year
             t5 = AddUEToREM(time);
             [Simp_REM, t6] = GenerateSimpREM(false, time);
             IterationDraw(true, Simp_REM);
-            [size_f, t7] = SaveSimpREM_HDF5(Simp_REM, time, name, folder, false);
+            [size_f, t7] = SaveSimpREM_HDF5(Simp_REM, time, name, folder, prediction_bool);
             Survey(time, t1, t2, t3, t4, t5, t6, t7, size_f);
             Report(time, tStart);
 %             DrawREM();

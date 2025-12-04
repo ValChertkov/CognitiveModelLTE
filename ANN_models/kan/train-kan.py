@@ -45,7 +45,7 @@ batch = 50000
 n = 1
 loss = kan.torch.nn.MSELoss()
 device = kan_funcs.SetDevice()
-adr = "data/"
+adr = "out/"
 
 params = 0
 for i in range(len(layers) - 1):

@@ -12,6 +12,11 @@ from matplotlib.pyplot import grid, show, plot, axis, title, figure, ylabel, xla
 import kan_funcs
 import warnings
 import matplotlib
+import os
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+adr = os.path.join(script_dir, "out/")
+path_kan = os.path.join(script_dir, "results-kan/")
 
 matplotlib.use('TkAgg')
 warnings.filterwarnings("ignore")
@@ -28,7 +33,7 @@ batch = 50000
 n = 1
 loss = kan.torch.nn.MSELoss()
 device = kan_funcs.SetDevice()
-adr = "data/"
+
 
 dataset = kan_funcs.LoadData(adr, test_data_size, 1, device)
 
@@ -45,12 +50,12 @@ for i in range(n):
     # ОСНОВНОЙ КОД
     model = KAN(width=layers, grid=grid_kan, k=polyn, device=device)
     # KAN.load_ckpt(model, name=model_name, folder="./model_ckpt")
-    model = KAN.loadckpt(path="results-kan/" + model_name)
+    model = KAN.loadckpt(path=path_kan + model_name)
 
     print('\n' + kan_funcs.Colors.GREEN + "[Инфо]" + kan_funcs.Colors.ENDC, 'загружена модель', model_name)
 
     # КРИВЫЕ ОБУЧЕНИЯ
-    file = open('results-kan/' + model_name + '.txt', 'r')
+    file = open(path_kan + model_name + '.txt', 'r')
     for j in range(epochs):
         line = file.readline().split(' ')
         trains.append(float(line[0]))
